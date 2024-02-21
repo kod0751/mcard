@@ -44,6 +44,7 @@ export default function CardList() {
         hasMore={hasNextPage}
         loader={<></>}
         next={loadMore}
+        scrollThreshold="50px"
       >
         {cards.map((card, index) => {
           return (
