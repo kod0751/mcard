@@ -2,7 +2,7 @@ import AdBanners from '@/components/home/AdBanners'
 import CardList from '@/components/home/CardList'
 import Top from '@/components/shared/Top'
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
       <Top

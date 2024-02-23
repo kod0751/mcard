@@ -2,6 +2,8 @@ import { COLLECTIONS } from '@/constants'
 import { Card } from '@/models/card'
 import {
   collection,
+  doc,
+  getDoc,
   getDocs,
   limit,
   query,
@@ -11,6 +13,7 @@ import {
 import { store } from './firebase'
 
 // pageParam 지금 보이고있는 맨 마지막요소
+// 전체 카드리스트 가져오기
 export default async function getCards(pageParam?: QuerySnapshot<Card>) {
   const cardQuery =
     pageParam == null
@@ -31,4 +34,13 @@ export default async function getCards(pageParam?: QuerySnapshot<Card>) {
   }))
 
   return { items, lastVisible }
+}
+
+export async function getCard(id: string) {
+  const snapshot = await getDoc(doc(store, COLLECTIONS.CARD, id))
+
+  return {
+    id,
+    ...(snapshot.data() as Card),
+  }
 }
