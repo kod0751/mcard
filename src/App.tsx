@@ -7,7 +7,7 @@ import ScrollToTop from '@shared/ScrollToTop'
 import SigninPage from '@pages/Signin'
 import SignupPage from '@pages/Signup'
 import Navbar from '@shared/Navbar'
-import PrivateRoute from '@components/Auth/PrivateRoute'
+import PrivateRoute from '@/components/auth/PrivateRoute'
 import ApplyPage from '@pages/Apply'
 
 function App() {
