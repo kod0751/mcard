@@ -1,4 +1,4 @@
-import { useInfiniteQuery, useQuery } from 'react-query'
+import { useInfiniteQuery } from 'react-query'
 import ListRow from '@shared/ListRow'
 import getCards from '@remote/card'
 import { flatten } from 'lodash'
