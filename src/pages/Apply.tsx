@@ -5,7 +5,7 @@ import { ApplyValues } from '@/models/apply'
 import { useState } from 'react'
 
 export default function ApplyPage() {
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(2)
 
   const handleTermsChange = (terms: ApplyValues['terms']) => {
     console.log('terms', terms)
@@ -17,11 +17,17 @@ export default function ApplyPage() {
     console.log('infoValues', infoValues)
   }
 
+  const handleCardInfoChange = (
+    cardInfoValues: Pick<ApplyValues, 'isMaster' | 'isHipass' | 'isRf'>,
+  ) => {
+    console.log(cardInfoValues)
+  }
+
   return (
     <div>
       {step === 0 ? <Terms onNext={handleTermsChange} /> : null}
       {step === 1 ? <BasicInfo onNext={handleBasicInfoChange} /> : null}
-      {step === 2 ? <CardInfo /> : null}
+      {step === 2 ? <CardInfo onNext={handleCardInfoChange} /> : null}
     </div>
   )
 }
