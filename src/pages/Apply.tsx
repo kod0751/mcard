@@ -1,33 +1,61 @@
-import BasicInfo from '@/components/apply/BasicInfo'
-import CardInfo from '@/components/apply/CardInfo'
-import Terms from '@/components/apply/Terms'
-import { ApplyValues } from '@/models/apply'
+import usePollApplyStatus from '@/components/apply/hooks/usePollApplyStatus'
+import useUser from '@/hooks/auth/useUser'
+import { APPLY_STATUS } from '@/models/apply'
+import { updateApplyCard } from '@/remote/apply'
+import Apply from '@components/apply'
+import useApplyCardMutaion from '@components/apply/hooks/useApplyCardMutaion'
 import { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function ApplyPage() {
-  const [step, setStep] = useState(2)
+  const navigate = useNavigate()
 
-  const handleTermsChange = (terms: ApplyValues['terms']) => {
-    console.log('terms', terms)
+  const [readyToPoll, setReadyToPoll] = useState(false)
+
+  const user = useUser()
+  const { id } = useParams() as { id: string }
+
+  usePollApplyStatus({
+    onSuccess: async () => {
+      await updateApplyCard({
+        userId: user?.uid as string,
+        cardId: id,
+        applyValues: {
+          status: APPLY_STATUS.COMPLETE,
+        },
+      })
+      navigate('/apply/done?success=true', {
+        replace: true,
+      })
+    },
+    onError: async () => {
+      await updateApplyCard({
+        userId: user?.uid as string,
+        cardId: id,
+        applyValues: {
+          status: APPLY_STATUS.REJECT,
+        },
+      })
+      navigate('/apply/done?success=false', {
+        replace: true,
+      })
+    },
+    enabled: readyToPoll,
+  })
+
+  const { mutate, isLoading: 카드신청중 } = useApplyCardMutaion({
+    onSuccess: () => {
+      setReadyToPoll(true)
+    },
+    onError: () => {
+      //실패했을떄 => 폴링시작
+      window.history.back()
+    },
+  })
+
+  if (readyToPoll || 카드신청중) {
+    return <div>Loading...</div>
   }
 
-  const handleBasicInfoChange = (
-    infoValues: Pick<ApplyValues, 'salary' | 'creditScore' | 'payDate'>,
-  ) => {
-    console.log('infoValues', infoValues)
-  }
-
-  const handleCardInfoChange = (
-    cardInfoValues: Pick<ApplyValues, 'isMaster' | 'isHipass' | 'isRf'>,
-  ) => {
-    console.log(cardInfoValues)
-  }
-
-  return (
-    <div>
-      {step === 0 ? <Terms onNext={handleTermsChange} /> : null}
-      {step === 1 ? <BasicInfo onNext={handleBasicInfoChange} /> : null}
-      {step === 2 ? <CardInfo onNext={handleCardInfoChange} /> : null}
-    </div>
-  )
+  return <Apply onSubmit={mutate} />
 }
