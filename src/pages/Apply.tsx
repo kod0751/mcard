@@ -1,5 +1,6 @@
 import useAppliedCard from '@/components/apply/hooks/useAppliedCard'
 import usePollApplyStatus from '@/components/apply/hooks/usePollApplyStatus'
+import FullPageLoader from '@/components/shared/FullPageLoader'
 import { useAlertContext } from '@/contexts/AlertContext'
 import useUser from '@/hooks/auth/useUser'
 import { APPLY_STATUS } from '@/models/apply'
@@ -71,7 +72,7 @@ export default function ApplyPage() {
     enabled: readyToPoll,
   })
 
-  const { mutate, isLoading: 카드신청중 } = useApplyCardMutaion({
+  const { mutate, isLoading: loading } = useApplyCardMutaion({
     onSuccess: () => {
       setReadyToPoll(true)
     },
@@ -85,8 +86,8 @@ export default function ApplyPage() {
     return null
   }
 
-  if (readyToPoll || 카드신청중) {
-    return <div>Loading...</div>
+  if (readyToPoll || loading) {
+    return <FullPageLoader message="카드를 신청중입니다" />
   }
 
   return <Apply onSubmit={mutate} />
