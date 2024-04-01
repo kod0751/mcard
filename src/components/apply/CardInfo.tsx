@@ -22,8 +22,6 @@ export default function CardInfo({
   const handleButtonClick = useCallback((e: MouseEvent<HTMLButtonElement>) => {
     const $button = e.target as HTMLButtonElement
 
-    console.log($button.dataset)
-
     setCardInfoValues((preValues) => ({
       ...preValues,
       [$button.name]: JSON.parse($button.dataset.value as string),
