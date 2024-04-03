@@ -5,8 +5,7 @@ import { css } from '@emotion/react'
 import { colors } from '@/styles/colorPalette'
 import useUser from '@/hooks/auth/useUser'
 import { useCallback } from 'react'
-import { signOut } from 'firebase/auth'
-import { auth } from '@/remote/firebase'
+import MyImage from '@components/my/MyImage'
 
 export default function Navbar() {
   const location = useLocation()
@@ -15,13 +14,13 @@ export default function Navbar() {
 
   const user = useUser()
 
-  const handleLogout = useCallback(() => {
-    signOut(auth)
-  }, [])
-
   const renderButton = useCallback(() => {
     if (user != null) {
-      return <Button onClick={handleLogout}>로그아웃</Button>
+      return (
+        <Link to="/my">
+          <MyImage size={40} />
+        </Link>
+      )
     }
 
     if (showSignButton) {
