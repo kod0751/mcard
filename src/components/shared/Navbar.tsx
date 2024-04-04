@@ -5,7 +5,7 @@ import { css } from '@emotion/react'
 import { colors } from '@/styles/colorPalette'
 import useUser from '@/hooks/auth/useUser'
 import { useCallback } from 'react'
-import MyImage from '@components/my/MyImage'
+import MyInfo from '@components/my/MyInfo'
 
 export default function Navbar() {
   const location = useLocation()
@@ -18,7 +18,7 @@ export default function Navbar() {
     if (user != null) {
       return (
         <Link to="/my">
-          <MyImage size={40} />
+          <MyInfo size={40} mode="default" />
         </Link>
       )
     }

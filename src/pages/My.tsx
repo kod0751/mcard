@@ -1,4 +1,4 @@
-import MyImage from '@/components/my/MyImage'
+import MyInfo from '@/components/my/MyInfo'
 import Button from '@/components/shared/Button'
 import Spacing from '@/components/shared/Spacing'
 import { auth } from '@/remote/firebase'
@@ -18,7 +18,7 @@ export default function MyPage() {
   return (
     <Flex direction="column" align="center">
       <Spacing size={40} />
-      <MyImage size={80} mode="upload" />
+      <MyInfo size={80} mode="upload" />
 
       <Spacing size={20} />
       <Text bold={true}>{user?.displayName}</Text>
