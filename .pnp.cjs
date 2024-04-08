@@ -37,6 +37,7 @@ const RAW_RUNTIME_STATE =
           ["@types/eslint", "npm:8.56.2"],\
           ["@types/jest", "npm:27.5.2"],\
           ["@types/lodash", "npm:4.14.202"],\
+          ["@types/lodash.flatten", "npm:4.4.9"],\
           ["@types/node", "npm:16.18.79"],\
           ["@types/qs", "npm:6.9.14"],\
           ["@types/react", "npm:18.2.54"],\
@@ -52,6 +53,7 @@ const RAW_RUNTIME_STATE =
           ["firebase", "npm:10.8.0"],\
           ["framer-motion", "virtual:97b6fb83b601b76b936a7f339087427a86325eb29de613bafebdcd10a9ad565663d1ab92c8cd912989ad2c8b2660a1b41cad9ebc146117afef28f2bd0de740e5#npm:11.0.6"],\
           ["lodash", "npm:4.17.21"],\
+          ["lodash.flatten", "npm:4.4.0"],\
           ["prettier", "npm:3.2.5"],\
           ["qs", "npm:6.12.0"],\
           ["react", "npm:18.2.0"],\
@@ -6421,6 +6423,23 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/@types-lodash-npm-4.14.202-76de3e302b-10c0.zip/node_modules/@types/lodash/",\
         "packageDependencies": [\
           ["@types/lodash", "npm:4.14.202"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:4.17.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/@types-lodash-npm-4.17.0-11e757616b-10c0.zip/node_modules/@types/lodash/",\
+        "packageDependencies": [\
+          ["@types/lodash", "npm:4.17.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/lodash.flatten", [\
+      ["npm:4.4.9", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/@types-lodash.flatten-npm-4.4.9-33ad4adccf-10c0.zip/node_modules/@types/lodash.flatten/",\
+        "packageDependencies": [\
+          ["@types/lodash.flatten", "npm:4.4.9"],\
+          ["@types/lodash", "npm:4.17.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13899,6 +13918,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["lodash.flatten", [\
+      ["npm:4.4.0", {\
+        "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/lodash.flatten-npm-4.4.0-495935e617-10c0.zip/node_modules/lodash.flatten/",\
+        "packageDependencies": [\
+          ["lodash.flatten", "npm:4.4.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["lodash.memoize", [\
       ["npm:4.1.2", {\
         "packageLocation": "../../../../AppData/Local/Yarn/Berry/cache/lodash.memoize-npm-4.1.2-0e6250041f-10c0.zip/node_modules/lodash.memoize/",\
@@ -14092,6 +14120,7 @@ const RAW_RUNTIME_STATE =
           ["@types/eslint", "npm:8.56.2"],\
           ["@types/jest", "npm:27.5.2"],\
           ["@types/lodash", "npm:4.14.202"],\
+          ["@types/lodash.flatten", "npm:4.4.9"],\
           ["@types/node", "npm:16.18.79"],\
           ["@types/qs", "npm:6.9.14"],\
           ["@types/react", "npm:18.2.54"],\
@@ -14107,6 +14136,7 @@ const RAW_RUNTIME_STATE =
           ["firebase", "npm:10.8.0"],\
           ["framer-motion", "virtual:97b6fb83b601b76b936a7f339087427a86325eb29de613bafebdcd10a9ad565663d1ab92c8cd912989ad2c8b2660a1b41cad9ebc146117afef28f2bd0de740e5#npm:11.0.6"],\
           ["lodash", "npm:4.17.21"],\
+          ["lodash.flatten", "npm:4.4.0"],\
           ["prettier", "npm:3.2.5"],\
           ["qs", "npm:6.12.0"],\
           ["react", "npm:18.2.0"],\
