@@ -1,5 +1,5 @@
-import { userAtom } from '@/atoms/user'
-import { auth } from '@/remote/firebase'
+import { userAtom } from '@atoms/user'
+import { auth } from '@remote/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import { useState } from 'react'
 import { useSetRecoilState } from 'recoil'

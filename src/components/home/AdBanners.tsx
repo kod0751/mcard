@@ -1,5 +1,5 @@
-import getAdBanners from '@/remote/adBanner'
-import { colors } from '@/styles/colorPalette'
+import getAdBanners from '@remote/adBanner'
+import { colors } from '@styles/colorPalette'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { useQuery } from 'react-query'
