@@ -1,6 +1,6 @@
-import AdBanners from '@/components/home/AdBanners'
-import CardList from '@/components/home/CardList'
-import Top from '@/components/shared/Top'
+import AdBanners from '@components/home/AdBanners'
+import CardList from '@components/home/CardList'
+import Top from '@components/shared/Top'
 
 export default function HomePage() {
   return (

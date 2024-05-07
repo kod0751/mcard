@@ -1,4 +1,4 @@
-import FixedBottomButton from '@/components/shared/FixedBottomButton'
+import FixedBottomButton from '@components/shared/FixedBottomButton'
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
 import { parse } from 'qs'

@@ -7,7 +7,7 @@ import { Global } from '@emotion/react'
 import globalStyles from './styles/globalStyles'
 import { AlertContextProvider } from './contexts/AlertContext'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import AuthGuard from '@/components/auth/AuthGuard'
+import AuthGuard from '@components/auth/AuthGuard'
 import { RecoilRoot } from 'recoil'
 
 const client = new QueryClient({

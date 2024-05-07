@@ -1,4 +1,4 @@
-import { Term, Option } from '@/models/apply'
+import { Term, Option } from '@models/apply'
 
 export const termslist = [
   {

@@ -1,4 +1,4 @@
-import { colors } from '@/styles/colorPalette'
+import { colors } from '@styles/colorPalette'
 import { css } from '@emotion/react'
 import React from 'react'
 import Flex from './Flex'

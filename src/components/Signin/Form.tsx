@@ -6,9 +6,9 @@ import Flex from '../shared/Flex'
 import Spacing from '../shared/Spacing'
 import TextField from '../shared/TextField'
 import Text from '@shared/Text'
-import { colors } from '@/styles/colorPalette'
+import { colors } from '@styles/colorPalette'
 import validator from 'validator'
-import { FormValues } from '@/models/signin'
+import { FormValues } from '@models/signin'
 
 export default function Form({
   onSubmit,
